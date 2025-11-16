@@ -1,0 +1,317 @@
+/* ------- ESTILOS GLOBALES------ */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 20px;
+    color: #333;
+    text-align: center;
+    background-image: linear-gradient(rgba(142, 141, 141, 0.5), rgba(129, 129, 129, 0.5)), url("../img/fondo1.jpg");
+}
+
+h1 {
+    color: #e32424;
+    margin-bottom: 30px;
+}
+
+/* Título principal estilo Pokémon */
+.titulo-poke {
+    font-size: 60px;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-weight: bold;
+    color: #ffcb05;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px; /* Reducimos el espaciado entre letras */
+    margin: 20px auto; /* Centrar con margen */
+
+    /* inclinación estilo Pokémon */
+    transform: skew(-5deg);
+
+    /* Contorno + sombra en dos colores:
+       - primero un borde azul (3b4cca),
+       - luego uno negro para simular el contorno grueso */
+    text-shadow: /* Azul interno */ -2px 0 #3b4cca,
+    2px 0 #3b4cca,
+    0 -2px #3b4cca,
+    0 2px #3b4cca,
+        /* Negro externo (mayor offset) */ -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000;
+}
+
+
+/* ---CONTENEDOR DE BOTON INICIO ----- */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Ancho máximo para no estirar toda la pantalla */
+    margin: 0 auto 10px auto;
+    animation: fadeIn 1.5s ease; /* Aparece suavemente */
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: #ffd500;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset; /* Brillo interno */
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* El contenedor <details> se comporta en bloque para ocupar todo el ancho posible. */
+details {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Estiliza el <summary> como si fuera un botón */
+details summary {
+    background-color: #ff6200;
+    display: inline-block; /* Para que se comporte más como un botón */
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    border: 3px solid black;
+    outline: none; /* Evita borde al hacer click/tecla de Tab en algunos navegadores */
+    user-select: none; /* Evita que se seleccione el texto al hacer click rápido */
+}
+
+/* Quita el marcador (triángulo) por defecto del summary */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Efecto hover */
+details summary:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset;
+}
+
+/* Efecto clic */
+details summary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Un poco de separación a los elementos dentro del details */
+details > *:not(summary) {
+    display: block;
+    margin-top: 8px;
+}
+
+
+/* ----  TARJETAS DE POKÉMON  --- */
+
+
+/* div que contiene la carta. Controla la perspectiva */
+.contenedor-cartas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-scene {
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    perspective: 1000px; /* Importante: genera un espacio 3D */
+    display: inline-block; /* Para mostrar varias cartas en línea si deseas */
+}
+
+/* La carta en sí, que gira */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Para ubicar las caras */
+    transform-style: preserve-3d;
+    transition: transform 0.9s ease; /* Velocidad y suavidad del giro */
+}
+
+/* Cuando se hace hover, rotamos 180° sobre el eje Y */
+.card-scene:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* Cada cara de la tarjeta */
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Se superponen */
+    backface-visibility: hidden; /* Para ocultar el dorso al girar */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box; /* Para que padding no sume al total del ancho */
+}
+
+/* Cara frontal, la vemos inicialmente */
+.card-front {
+    background-image: url("../img/portadaPoke.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    border-radius: 15px;
+
+}
+
+/* Cara trasera, gira 180° para quedar oculta de entrada */
+.card-back {
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+
+/* Ajustes para todas las imágenes de la cara de la carta */
+.card-face img {
+    display: flex;
+    max-width: 68%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto;
+}
+
+/* Contenedor de la condición (xsl:choose) */
+.condicion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1; /* Capa de fondo */
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Imágenes que se muestran dentro de .condicion */
+.condicion img {
+    width: 100%;
+    height: 100%; /* Mantiene la proporción */
+    margin: 0 auto; /* Centra la imagen dentro de .condicion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+/* Contenedor para Pokémon + texto */
+.info {
+    position: relative;
+    z-index: 1; /* Por encima de la imagen-fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente la imagen y el texto */
+    justify-content: flex-start; /* Ubica el contenido en la parte superior */
+    padding: 30px; /* Algo de espacio interno */
+    box-sizing: border-box;
+}
+
+/* El Pokémon en la cara trasera */
+.info-img {
+    width: 100%;
+    text-align: center;
+}
+
+.info-img img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.info-info p {
+    margin: 5px 0;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Ajustes de párrafos */
+.info p {
+    font-weight: bold;
+    margin: 0; /* Elimina el margen vertical por defecto */
+    line-height: 1.2; /*Ajusta la altura de línea para separar un poco */
+    text-align: left;
+}
+
+
+/* Contenedor de cada Pokémon */
+.pokemon-atributos {
+    display: inline-block;
+    background: #fff;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Tamaño fijo de tarjeta */
+    vertical-align: top; /* Para que las tarjetas se alineen en fila */
+    text-align: left; /* Alinea el contenido interno a la izquierda */
+}
+
+/* Imagen */
+.pokemon-atributos img {
+    max-width: 100%;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 15px auto; /* Centra la imagen y añade espacio inferior */
+}
+
+/* Mensajes condicionales */
+.condicion {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin: 0 0; /* Separación vertical */
+}
+
+.condicion img {
+    max-width: 100%; /* La imagen no excede el ancho del contenedor */
+    height: auto; /* Mantiene proporciones */
+    display: block; /* Quita espacios en línea y permite margin: 0 auto si quieres */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil (opcional) */
+}
+
+/* Ajustes a los párrafos */
+.pokemon-atributos p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.pokemon-atributos p strong {
+    color: #555;
+}

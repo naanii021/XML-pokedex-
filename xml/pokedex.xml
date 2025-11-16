@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/pokedex.xsl"?>
+
+<Pokedex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsl/pokedex.xsl">
+
+	<Pokemon id="001">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png</imagen>
+		<Nombre>Bulbasaur</Nombre>
+		<Tipo principal="Planta" secundario="Veneno"/>
+		<Estadisticas>
+			<PS>45</PS>
+			<Ataque>49</Ataque>
+			<Defensa>49</Defensa>
+			<Velocidad>45</Velocidad>
+			<AtaqueEspecial>65</AtaqueEspecial>
+			<DefensaEspecial>65</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Espesura</Habilidad>
+			<Habilidad oculta="true">Clorofila</Habilidad>
+		</Habilidades>
+		<Descripcion>Un Pokémon planta que puede lanzar semillas y absorber la luz solar.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="004">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png</imagen>
+		<Nombre>Charmander</Nombre>
+		<Tipo principal="Fuego"/>
+		<Estadisticas>
+			<PS>39</PS>
+			<Ataque>52</Ataque>
+			<Defensa>43</Defensa>
+			<Velocidad>65</Velocidad>
+			<AtaqueEspecial>60</AtaqueEspecial>
+			<DefensaEspecial>50</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Mar Llamas</Habilidad>
+			<Habilidad oculta="true">Poder Solar</Habilidad>
+		</Habilidades>
+		<Descripcion>Prefiere los lugares calientes. La llama en la punta de su cola arde según sus emociones.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="007">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png</imagen>
+		<Nombre>Squirtle</Nombre>
+		<Tipo principal="Agua"/>
+		<Estadisticas>
+			<PS>44</PS>
+			<Ataque>48</Ataque>
+			<Defensa>65</Defensa>
+			<Velocidad>43</Velocidad>
+			<AtaqueEspecial>50</AtaqueEspecial>
+			<DefensaEspecial>64</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Torrent</Habilidad>
+			<Habilidad oculta="true">Rain Dish</Habilidad>
+		</Habilidades>
+		<Descripcion>Cuando retrae su largo cuello en el caparazón, dispara agua a gran presión.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="025">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png</imagen>
+		<Nombre>Pikachu</Nombre>
+		<Tipo principal="Eléctrico"/>
+		<Estadisticas>
+			<PS>35</PS>
+			<Ataque>55</Ataque>
+			<Defensa>40</Defensa>
+			<Velocidad>90</Velocidad>
+			<AtaqueEspecial>50</AtaqueEspecial>
+			<DefensaEspecial>50</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Electricidad Estática</Habilidad>
+			<Habilidad oculta="true">Pararrayos</Habilidad>
+		</Habilidades>
+		<Descripcion>Cuando varios de estos Pokémon se reúnen, su electricidad podría causar tormentas.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="052">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png</imagen>
+		<Nombre>Meowth</Nombre>
+		<Tipo principal="Normal"/>
+		<Estadisticas>
+			<PS>40</PS>
+			<Ataque>45</Ataque>
+			<Defensa>35</Defensa>
+			<Velocidad>90</Velocidad>
+			<AtaqueEspecial>40</AtaqueEspecial>
+			<DefensaEspecial>40</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Recogida</Habilidad>
+			<Habilidad oculta="true">Experto</Habilidad>
+		</Habilidades>
+		<Descripcion>Le encanta el brillo de las monedas y colecciona todo lo que reluce.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="092">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png</imagen>
+		<Nombre>Gastly</Nombre>
+		<Tipo principal="Fantasma" secundario="Veneno"/>
+		<Estadisticas>
+			<PS>30</PS>
+			<Ataque>35</Ataque>
+			<Defensa>30</Defensa>
+			<Velocidad>80</Velocidad>
+			<AtaqueEspecial>100</AtaqueEspecial>
+			<DefensaEspecial>35</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Levitación</Habilidad>
+		</Habilidades>
+		<Descripcion>Es una bola de gas con una expresión maliciosa que puede atravesar paredes.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="133">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png</imagen>
+		<Nombre>Eevee</Nombre>
+		<Tipo principal="Normal"/>
+		<Estadisticas>
+			<PS>55</PS>
+			<Ataque>55</Ataque>
+			<Defensa>50</Defensa>
+			<Velocidad>55</Velocidad>
+			<AtaqueEspecial>45</AtaqueEspecial>
+			<DefensaEspecial>65</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Fuga</Habilidad>
+			<Habilidad oculta="true">Anticipación</Habilidad>
+		</Habilidades>
+		<Descripcion>Gracias a su ADN inestable, puede evolucionar en muchas formas diferentes.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="150">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png</imagen>
+		<Nombre>Mewtwo</Nombre>
+		<Tipo principal="Psíquico"/>
+		<Estadisticas>
+			<PS>106</PS>
+			<Ataque>110</Ataque>
+			<Defensa>90</Defensa>
+			<Velocidad>130</Velocidad>
+			<AtaqueEspecial>154</AtaqueEspecial>
+			<DefensaEspecial>90</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Presión</Habilidad>
+			<Habilidad oculta="true">Impasible</Habilidad>
+		</Habilidades>
+		<Descripcion>Creado por manipulación genética, es uno de los Pokémon más poderosos.</Descripcion>
+	</Pokemon>
+
+	<Pokemon id="039">
+		<imagen>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png</imagen>
+		<Nombre>Jigglypuff</Nombre>
+		<Tipo principal="Normal" secundario="Hada"/>
+		<Estadisticas>
+			<PS>115</PS>
+			<Ataque>45</Ataque>
+			<Defensa>20</Defensa>
+			<Velocidad>20</Velocidad>
+			<AtaqueEspecial>45</AtaqueEspecial>
+			<DefensaEspecial>25</DefensaEspecial>
+		</Estadisticas>
+		<Habilidades>
+			<Habilidad>Gran Encanto</Habilidad>
+			<Habilidad oculta="true">Competitivo</Habilidad>
+		</Habilidades>
+		<Descripcion>Jigglypuff es conocido por su hermosa voz, que usa para encantar a sus oponentes.  Cuando se enfada, se hincha como un globo.</Descripcion>
+	</Pokemon>
+
+</Pokedex>

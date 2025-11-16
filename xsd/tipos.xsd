@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="Pokedex">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Pokemon" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Tipo">
+								<xs:complexType>
+									<xs:attribute name="principal" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Planta" />
+												<xs:enumeration value="Fuego" />
+												<xs:enumeration value="Agua" />
+												<xs:enumeration value="Eléctrico" />
+												<xs:enumeration value="Fantasma" />
+												<xs:enumeration value="Normal" />
+												<xs:enumeration value="Psíquico" />
+												<!-- Agrega más tipos aquí -->
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="secundario" use="optional">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Veneno" />
+												<xs:enumeration value="Volador" />
+												<xs:enumeration value="Hada" />
+												<!-- Agrega más tipos aquí -->
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

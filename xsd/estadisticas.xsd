@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Estadísticas de Pokémon</title>
+				<!-- Asegúrate de que la ruta al CSS sea correcta -->
+				<link rel="stylesheet" type="text/css" href="../css/estadisticas.css"/>
+			</head>
+			<body>
+				<h1>Estadísticas de Pokémon</h1>
+
+				<!-- Contenedor principal en cuadrícula -->
+				<div class="gallery2">
+					<!-- Recorre cada Pokémon en la Pokedex -->
+					<xsl:for-each select="Pokedex/Pokemon">
+						<div class="cards">
+							<h2><xsl:value-of select="Nombre"/></h2>
+							<p>
+								<strong>PS:</strong>
+								<xsl:value-of select="Estadisticas/PS"/>
+							</p>
+							<p>
+								<strong>Ataque:</strong>
+								<xsl:value-of select="Estadisticas/Ataque"/>
+							</p>
+							<p>
+								<strong>Defensa:</strong>
+								<xsl:value-of select="Estadisticas/Defensa"/>
+							</p>
+							<p>
+								<strong>Velocidad:</strong>
+								<xsl:value-of select="Estadisticas/Velocidad"/>
+							</p>
+						</div>
+					</xsl:for-each>
+				</div>
+			</body>
+		</html>
+	</xsl:template>
+
+</xsl:stylesheet>

@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:linear-gradient(rgba(73, 65, 65, 0.3), rgba(129, 129, 129, 0.3)), url("https://e1.pxfuel.com/desktop-wallpaper/348/670/desktop-wallpaper-pokemon-tile-cartoon-pattern-1920x1080-cartoon-pattern.jpg");
+    margin: 20px;
+    color: #333;
+}
+
+/* Contenedor de título + botón índice */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Título principal */
+.titulo-poke {
+    font-size: 4rem;
+    font-family: 'pokemon solid' ;
+    color: #ffcb05; /* Amarillo Pokémon */
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 auto;
+    transform: skew(-10deg); /* Inclinación estilo Pokémon */
+    text-shadow: /* Contorno y sombras para efecto original*/
+            -2px -2px 0 #000, /* Contorno negro */
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000,
+            -3px -3px 0 #3b4cca, /* Sombra azul oscuro */
+            4px -4px 0 #3b4cca;
+}
+
+
+/* CONTENEDOR DE BOTONES */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Ancho máximo para no estirar toda la pantalla */
+    margin: 0 auto 10px auto;
+    animation: fadeIn 1.5s ease; /* Aparece suavemente */
+}
+
+.button-container a {
+    text-decoration: none;
+}
+.button {
+    background-color: #ffd500;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset; /* Brillo interno */
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/* El contenedor <details> se comporta en bloque para ocupar todo el ancho disponible. */
+details {
+    display: block;
+    margin: 10px 0;
+    text-align: center; /* Ajusta según cómo quieras el texto del <summary> */
+}
+
+/* Estiliza el <summary> como si fuera un botón */
+details summary {
+    background-color: #ff6200;
+    display: inline-block; /* Para que se comporte más como un botón */
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    border: 3px solid black;
+    outline: none; /* Evita borde al hacer click en algunos navegadores */
+    user-select: none; /* Evita que se seleccione el texto al hacer click rápido */
+}
+
+/* Quita el marcador (triángulo) por defecto del summary en navegadores basados en WebKit */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Efecto hover */
+details summary:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset;
+}
+
+/* Efecto clic */
+details summary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Un poco de separación a los elementos dentro del details */
+details > *:not(summary) {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Contenedor principal en cuadrícula */
+.gallery2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px; /* Limita el ancho máximo */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Tarjeta para cada Pokémon */
+.cards {
+    display: flex;
+    flex-direction: row;         /* Texto a la izq., imagen a la der. */
+    align-items: center;         /* Centra verticalmente */
+    justify-content: flex-start; /* Ajusta todo a la izquierda */
+    gap: 20px;                   /* Espacio entre texto e imagen */
+    border-radius: 10px;
+    border-left: 8px solid #e32424; /* Borde decorativo */
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Contenedor que agrupa la info */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Efecto "hover" en las tarjetas */
+.cards:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Cada “card” o bloque del Pokémon */
+.pokemon-card {
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.pokemon-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Título de la tarjeta (nombre del Pokémon) */
+.cards h2 {
+    color: #ffcb05;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    text-align: center;
+    text-shadow:
+            -2px 0   #3b4cca,
+            2px 0   #3b4cca,
+            0   -2px #3b4cca,
+            0    2px #3b4cca;
+}
+
+/* Párrafos en cada tarjeta */
+.cards p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 1em;
+}
+
+/* Resalta la palabra "PS", "Ataque", "Defensa", etc. */
+.cards p strong {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+
+/* Contenedor de la imagen */
+.pokemon-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+/* Imagen en sí */
+.pokemon-img img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    /* Para pantallas grandes, aumentamos el ancho mínimo de cada tarjeta */
+    .gallery2 {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 1200px;
+        padding: 30px;
+    }
+
+    /* Aumentamos el padding interno de las cartas */
+    .cards {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    /* Incrementamos el tamaño del título y párrafos dentro de las cartas */
+    .cards h2 {
+        font-size: 2em;
+    }
+
+    .cards p {
+        font-size: 1.2em;
+    }
+}
+

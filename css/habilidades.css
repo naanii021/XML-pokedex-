@@ -1,0 +1,207 @@
+/*---ESTILOS GLOBALES---*/
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(142, 141, 141, 0.6), rgba(129, 129, 129, 0.3)), url("../img/fondoHabilidades.jpg");
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Título principal */
+.titulo-poke {
+    font-size: 3rem;
+    font-family: 'pokemon solid';
+    color: #ffcb05; /* Amarillo Pokémon */
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 auto;
+    transform: skew(-10deg); /* Inclinación estilo Pokémon */
+    text-shadow: /* Contorno y sombras para efecto original*/ -2px -2px 0 #000, /* Contorno negro */ 2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    -3px -3px 0 #3b4cca, /* Sombra azul oscuro */ 4px -4px 0 #3b4cca;
+}
+
+
+/* CONTENEDOR DE BOTONES */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Ancho máximo para no estirar toda la pantalla */
+    margin: 0 auto 10px auto;
+    animation: fadeIn 1.5s ease; /* Aparece suavemente */
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: #ffd500;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset; /* Brillo interno */
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* El contenedor <details> se comporta en bloque para ocupar todo el ancho disponible.
+   Si prefieres que sea más reducido, puedes usar display: inline-block; */
+details {
+    display: block;
+    margin: 10px 0;
+    text-align: center; /* Ajusta según cómo quieras el texto del <summary> */
+}
+
+/* Estiliza el <summary> como si fuera un botón */
+details summary {
+    background-color: #ff6200;
+    display: inline-block; /* Para que se comporte más como un botón */
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    border: 3px solid black;
+    outline: none; /* Evita borde al hacer click/tecla de Tab en algunos navegadores */
+    user-select: none; /* Evita que se seleccione el texto al hacer click rápido */
+}
+
+/* Quita el marcador (triángulo) por defecto del summary en navegadores basados en WebKit */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Efecto hover */
+details summary:hover {
+    background-color: #ffd500;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgb(225, 2, 2) inset;
+}
+
+/* Efecto clic */
+details summary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Un poco de separación a los elementos dentro del details */
+details > *:not(summary) {
+    display: block;
+    margin-top: 10px;
+}
+
+/* =========================
+   GALERÍA DE TARJETAS
+========================= */
+.card-gallery {
+    display: flex;
+    background-position: -25%;
+    gap: 10px;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: auto;
+    height: 500px; /* Altura fija del contenedor para lograr efecto */
+}
+
+/* ----TARJETAS EXPANDIBLES----*/
+.card {
+    flex: 0.8; /* Tamaño igual para todas al inicio */
+    background: linear-gradient(rgb(255, 255, 255), rgba(129, 129, 129, 0.9));
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: flex 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
+}
+
+.card p strong {
+    font-weight: bold;
+    color: #f40025;
+    margin-right: 5px;
+}
+
+/* Al pasar el ratón, la tarjeta en foco se expande */
+.card:hover {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    transform: scale(1.05);
+    align-content: center;
+}
+
+/* Contenido interno de la tarjeta */
+.card-content {
+    display: flex
+;
+    flex-direction: column;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título */
+.card h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f4bb00; /* linea separadora*/
+}
+
+
+/* Imagen del Pokémon */
+.pokemon-image {
+    width: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Información adicional */
+.card-info {
+    flex: 1;
+    font-size: 1.2rem;
+    text-align: center;
+    overflow-y: auto;
+    opacity: 0;
+}
+
+/* Cuando se expande la tarjeta, mostramos la información */
+.card:hover .card-info {
+    opacity: 1;
+}
